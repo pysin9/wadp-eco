@@ -8,18 +8,33 @@
     background-color: #f1f1f1;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px ;
 	width: 20%
 	}
-#messages,#textbox{
+#messages{
+margin-left: 500px;
+	margin-top: 100px;
+	}
+#textbox{
     margin-left: 500px;
+	margin-top: 100px;
 }
 #myBtn{
     margin-left: 100px;
+	margin-top: 100px;
 }
 body {
 background-image: url("../img/road.jpg");
 }
+.welcome {
+ border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px ;
+	width: 20%;
+	margin-left: 500px;
+	margin-top: -100px;
+	}
 a{
   color: #9c27b0;
   text-decoration: none;
@@ -28,7 +43,7 @@ a{
 }
 
 #navbar-full .navbar {
-  border-radius: 0 !important;
+  border-radius: 0;
   margin-bottom: 20px;
   z-index: 2;
 }
@@ -49,7 +64,7 @@ a{
   padding: 0.625rem 0;
   margin-bottom: 20px;
   color: #555;
-  background-color: #fff !important;
+  background-color: #fff;
   box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
 }
 .navbar>.container{
@@ -59,7 +74,7 @@ a{
   justify-content: space-between;
 }
 .container {
-    min-width: 992px !important;
+    min-width: 992px;
   }
 .navbar .navbar-brand {
 	padding: 22px 20px;
@@ -185,7 +200,7 @@ a{
     flex-wrap: nowrap;
 }
 .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
+    display: flex;
     flex-basis: auto;
 }
 .navbar-expand-lg .navbar-toggler {
@@ -252,6 +267,6 @@ a{
   <div id="messages"></div>
   <input id="textbox" type="text"></input>
   <button id="myBtn" onclick="test()">send</button>
- 
+ <p class="welcome"> Hello. How are you today? This is our eco team! We are pleased to have you here. </p>
   </body>
 </html>
