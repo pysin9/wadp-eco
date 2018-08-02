@@ -1,0 +1,131 @@
+<html> 
+<head> 
+<title> Edit Profile </title> 
+<link rel="stylesheet" type="text/css" href="projectCSS.css" /> 
+<link rel="stylesheet" type="text/css" href="myCSS.css" />
+</title> 
+
+<body> 
+
+<header> 
+ <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="/homepage.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+      </nav> 
+<div class="dropdown">
+<form method="get"> 
+<input type="search" placeholder='search' id='search'> 
+<input type='image' src="search.png" onclick='search()' class='searchButton'>
+</button> 
+</form> 
+<select onchange='changeMenu(this.value)'> Other
+    <option  value="Choose" selected="selected"> Choose </option> 
+    <option value='videos'>Videos </option> 
+    <option value='submitVideos' >Submit A Video</option> 
+    <option value='help-section'>Help Section  </option> 
+  </div>
+  </select> 
+</header> 
+<script> 
+
+
+function cancel() {
+alert('back to home') 
+location.assign('homepage.html') 
+} 
+
+function confirmName() { 
+	var username = document.getElementById('username').value
+	console.log(username) 
+} 
+
+</script> 
+<form> 
+Username <input id='username'/> 
+<button onclick='confirmName()'> Change Username </button> 
+<div> 
+Pasword <input id='password' /> 
+<button> Change Password </button> 
+<div> 
+Email <input id='email'> 
+<div> 
+Personal Website <input type='link' id='website'> 
+<div> 
+<textarea id='biography' cols='40' rows='1'> 
+</textarea> 
+
+
+<div id='functions'> 
+<button onclick='save()' type='button'> Save </button> 
+<button onclick='cancel()'> Cancel </button> 
+</div> 
+</form> 
+</body> 
+<script>
+var profile = {}; 
+function loadProfile () { 
+var username;
+var edit = document.createElement("BUTTON"); 
+var t = document.createTextNode('Edit');
+edit.appendChild(t);
+document.getElementById('functions').appendChild(edit);
+password = window.localStorage.getItem('savePassword');
+email = window.localStorage.getItem('saveEmail');
+document.getElementById('email').value = email;
+
+username = window.localStorage.saveUsername;
+document.getElementById('username').value = username;
+}  
+
+function save() {
+document.getElementById('password').value = profile.password 
+document.getElementById('username').value = profile.username 
+document.getElementById('email').value = profile.email 
+document.getElementById('website').value = profile.site 
+document.getElementById('biography').value = profile.bio 
+console.log(profile) 
+}  
+
+loadProfile() 
+</script> 
+<script src="function.js"></script> 
+
+</html> 

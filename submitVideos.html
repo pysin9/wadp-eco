@@ -1,0 +1,125 @@
+<html> 
+<head> 
+<title> Submit A Video </title> 
+<link rel="stylesheet" type="text/css" href="projectCSS.css"> 
+<link rel="stylesheet" type="text/css" href="myCSS.css" />
+</head> 
+
+<body> 
+
+<header> 
+ <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="/homepage.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+      </nav> 
+<div class="dropdown">
+<form method="get"> 
+<input type="search" placeholder='search' id='search'> 
+<input type='image' src="search.png" onclick='search()' class='searchButton'>
+</button> 
+</form> 
+<select onchange='changeMenu(this.value)'> Other
+    <option  value="Choose" selected="selected"> Choose </option> 
+    <option value='videos'>Videos </option> 
+    <option value='submitVideos' >Submit A Video</option> 
+    <option value='help-section'>Help Section  </option> 
+  </div>
+  </select> 
+</header> 
+<div id='preview'> 
+<button value='confirm' name='confirm' onclick='' > Confirm </button> 
+</div> 
+<div> 
+<p> Note, we moderate the content and list everything by usefulness. 
+	We have many different categories that helps to differentiate them.</p> 
+<form onsubmit='submitForm()' method='get'>  
+	<fieldset> 
+		Username <input type='text' id="username" required> 
+<div> 
+		Name of Video<input type='text' id='video-name' placeholder='environmental conservation' required> 
+ <div>
+		Youtube Link <input type='link' id='video-link' placeholder='http://www.youtube.com/' required> 
+ <div> 
+<p> Is the video listed?: </p> 
+		<input type='radio' name='question' value='yes' required> Yes </input> 
+<div> 
+		<input type='radio' name='question' value='no'  required> No </input> 
+<div> 
+		<button type='submit' onsubmit='submitForm()' method='get'> Submit </button> 
+<div id='show-input'> 
+</fieldset> 
+
+
+</form> 
+
+<script> 
+var formdata = {
+	} ;
+for (i = 0; i < formdata.length; i++) {
+var forms = [] 
+forms = forms.append(formdata)
+formdata.slice(1,-1) 
+console.log(forms) 
+} 
+
+
+function submitForm()  {
+		formdata.name = document.getElementById('username').value;
+		formdata.title = document.getElementById('video-name').value;
+		formdata.link = document.getElementById('video-link').value;
+		formdata.status = document.querySelector('input[name="question"]:checked').value 
+		
+		var submitted = formdata;
+		console.log("submitted"+ submitted);
+		localStorage.videoInfo = JSON.stringify(submitted);
+		console.log("localStorage"+ localStorage.videoInfo);
+		console.log(formdata) 
+		
+		//document.getElementById('preview').innerHTML = "Here is your input : " + localStorage.videoInfo;// 
+ 
+	
+} 
+
+</script> 
+<script src="function.js"></script> 
+</body> 
+
+</html> 
