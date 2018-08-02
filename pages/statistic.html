@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<title>Statistics</title>
+	<link rel="stylesheet" type="text/css" href="../css/stats css.css">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="../index.html">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="game.html" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      </nav>
+</body>
+<script type="text/javascript" src="../js/chart.js"></script>
+<canvas id="myChart" style="max-width: 1000px;"></canvas>
+<script>
+function firstchart(){
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["2003", "2016"],
+        datasets: [{
+            label: 'Recycling Rates',
+            data: [47,61],
+            backgroundColor: [
+                'rgb(0, 170, 255,0.2)',
+                'rgb(128, 128, 0,0.2)',
+            ],
+            borderColor: [
+                'rgb(0, 38, 51)',
+                'rgb(77, 77, 0)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+					steps: 5,
+					stepValue: 1,
+					min: 0,
+					max: 100,
+					
+                }
+            }]
+        }
+    }
+});
+}
+</script>
+<canvas id="myChart" style="max-width: 1000px;"></canvas>
+<script>
+function secondchart(){
+var ctx = document.getElementById("myChart").getContext('2d');
+var myhart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["food","paper/cardboard","plastics","c&d","horticultural waste","wood","ferrous metal","non-ferrous metal","used slag","ash & sludge","glass","textile/leather","scrap tyres","others(stones,ceramics & rubber etc.)"],
+        datasets: [{
+            label: 'Recycling Rates for 2003',
+            data: [6,43,7,94,19,39,93,81,92,0,9,1,43,0,47],
+            backgroundColor: [
+                'rgb(255, 194, 102,0.2)',
+                'rgb(255, 0, 0,0.2)',
+				'rgb(179, 0, 89,0.2)',
+				'rgb(0, 92, 179,0.2)',
+				'rgb(71, 71, 107,0.2)',
+				'rgb(0, 230, 77,0.2)',
+				'rgb(255, 255, 0,0.2)',
+				'rgb(204, 102, 0,0.2)',
+				'rgb(0, 255, 170,0.2)',
+				'rgb(230, 0, 230,0.2)',
+				'rgb(153, 255, 51,0.2)',
+				'rgb(0, 0, 204,0.2)',
+				'rgb(0, 204, 204,0.2)',
+				'rgb(102, 102, 0,0.2)',
+            ],
+            borderColor: [
+                'rgb(153, 92, 0)',
+                'rgb(102, 0, 0)',
+				'rgb(51, 0, 20)',
+				'rgb(0, 0, 77)',
+				'rgb(31, 0, 77)',
+				'rgb(0, 51, 17)',
+				'rgb(128, 128, 0)',
+				'rgb(77, 38, 0)',
+				'rgb(0, 77, 51)',
+				'rgb(77, 0, 77)',
+				'rgb(26, 51, 0)',
+				'rgb(0, 0, 51)',
+				'rgb(0, 51, 51)',
+				'rgb(51, 51, 0)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    optionsk: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+					steps: 10,
+					stepValue: 10,
+					max: 100
+					
+                }
+            }]
+        }
+    }
+});
+}
+</script>
+<canvas id="myChart" style="max-width: 1000px;"></canvas>
+<script>
+function thirdchart(){
+var ctx = document.getElementById("myChart").getContext('2d');
+var myhart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["food","paper/cardboard","plastics","c&d","horticultural waste","wood","ferrous metal","non-ferrous metal","used slag","ash & sludge","glass","textile/leather","scrap tyres","others(stones,ceramics & rubber etc.)"],
+        datasets: [{
+            label: 'Recycling Rates for 2016',
+            data: [14,51,7,99,65,78,99,99,98,13,20,7,91,2],
+            backgroundColor: [
+                'rgb(255, 194, 102,0.2)',
+                'rgb(255, 0, 0,0.2)',
+				'rgb(179, 0, 89,0.2)',
+				'rgb(0, 92, 179,0.2)',
+				'rgb(71, 71, 107,0.2)',
+				'rgb(0, 230, 77,0.2)',
+				'rgb(255, 255, 0,0.2)',
+				'rgb(204, 102, 0,0.2)',
+				'rgb(0, 255, 170,0.2)',
+				'rgb(230, 0, 230,0.2)',
+				'rgb(153, 255, 51,0.2)',
+				'rgb(0, 0, 204,0.2)',
+				'rgb(0, 204, 204,0.2)',
+				'rgb(102, 102, 0,0.2)',
+            ],
+            borderColor: [
+                'rgb(153, 92, 0)',
+                'rgb(102, 0, 0)',
+				'rgb(51, 0, 20)',
+				'rgb(0, 0, 77)',
+				'rgb(31, 0, 77)',
+				'rgb(0, 51, 17)',
+				'rgb(128, 128, 0)',
+				'rgb(77, 38, 0)',
+				'rgb(0, 77, 51)',
+				'rgb(77, 0, 77)',
+				'rgb(26, 51, 0)',
+				'rgb(0, 0, 51)',
+				'rgb(0, 51, 51)',
+				'rgb(51, 51, 0)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+					steps: 10,
+					stepValue: 10,
+					max: 100
+					
+                }
+            }]
+        }
+    }
+});
+}
+</script>
+<body>
+<!--slider-->
+<label class="switch" >
+  <input type="checkbox" onclick="firstchart()">
+  <span class="slider" id="first"></span>
+</label>
+
+<label class="switch" >
+  <input type="checkbox" onclick="secondchart()">
+  <span class="slider" id="second"></span>
+</label>
+
+<label class="switch" >
+  <input type="checkbox" onclick="thirdchart()">
+  <span class="slider" id="third"></span>
+</label>
+</body>
+</html>

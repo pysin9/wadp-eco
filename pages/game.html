@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game</title>
+  	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="../css/samplegame.css">
+</head>
+<body>
+<!--header-->
+     <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="../index.html">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      </nav>
+<!--quotes-->
+<div id="startdivider"></div>
+    <div id="maindivider">
+	   <p id="paragraph" onclick="displayword()"></p>
+	</div>
+	    <div id="enddivider"></div>
+<!--containers-->
+<div id="container">
+   <div class="holder" id="mainheader">
+     <div class="box" draggable="true"><img id="paper" src="../img/ballpaper.jpg" ></div>
+   </div>
+   <div id="boximage" class="holder"><img id="dustbin" src="../img/dustbin.jpg" >
+   </div>
+</div>
+<!--score system-->
+<div id='score'>
+	<p id='store' class="store">Score: 0</p> 
+</div>
+<!--reward display-->
+<i class="fa fa-gift" id="present" onclick="imageappear()"></i>
+    <span class="close" id="close">&times;</span> 
+<!--button-->
+<div id="buttons">
+    <button id="endgame" onclick="endgame()">End Game</button>
+</div>
+</body>
+<script>
+//drag and drop
+class App {
+
+  static init() {
+
+    App.box = document.getElementsByClassName('box')[0]
+
+    App.box.addEventListener("dragstart", App.dragstart)
+    App.box.addEventListener("dragend", App.dragend)
+
+    const containers = document.getElementsByClassName('holder')
+
+    for(const container of containers) {
+      container.addEventListener("dragover", App.dragover)
+      //container.addEventListener("dragenter", App.dragenter)
+     // container.addEventListener("dragleave", App.dragleave)
+      container.addEventListener("drop", App.drop)
+    }
+  }
+
+  static dragstart() {
+    this.className += "held"
+  
+    setTimeout(()=>this.className="invisible", 0)
+  }
+
+  static dragend() {
+    this.className = "held";
+	changepic();
+  }
+
+  static dragover(e) {
+    e.preventDefault()
+  }
+
+  static dragenter(e) {
+    e.preventDefault()
+    this.className += "hovered"
+  }
+
+  static dragleave() {
+    this.className = "holder"
+  }
+
+  static drop() {
+    this.className = "holder"
+    this.append(App.box)
+  }
+
+}
+
+document.addEventListener("DOMContentLoaded", App.init)
+
+//score count
+        var totalScore = 0; 
+		var parent = document.getElementById("score");
+//end game
+function endgame(){
+    alert("Congratualations! You have accumulated " + totalScore + " points");
+	document.getElementById("store").innerText="Score: 0";
+	document.getElementById("dustbin").src = "../img/dustbin.jpg";
+	}
+//changepicture
+function changepic(){
+    var x = document.querySelectorAll("#boximage img");
+    var z = document.querySelectorAll("#boximage img").length;
+       if (z==2){
+			document.getElementById("dustbin").src = "../img/trashpaper.jpg";
+            
+			//create image 
+			var imagenode = document.createElement("IMG");
+			imagenode.setAttribute("src","../img/ballpaper.jpg");
+
+			var divNode = document.createElement("DIV");
+			divNode.setAttribute("class", "box");
+			divNode.setAttribute("draggable", "true");
+
+			divNode.addEventListener("dragstart", App.dragstart)
+            divNode.addEventListener("dragend", App.dragend)
+			
+			var held = document.querySelector(".held");
+			held.parentNode.removeChild(held);
+			document.getElementById("mainheader").appendChild(divNode).appendChild(imagenode);
+			document.getElementById("paper").style.display = "none"
+			
+			//score count
+			totalScore += 1;
+			var para = document.createElement("p"); 
+			var node = document.createTextNode("Score: " + totalScore);
+			para.appendChild(node); 
+            document.getElementById("store").innerHTML="Score: "+totalScore;
+		}
+        else{
+	      document.getElementById("dustbin").src = "../img/dustbin.jpg";
+	    }
+		
+}
+//quotes
+function displayword(){
+   var paragraph = document.getElementById("paragraph")
+   var quotes = [
+   "Never Refuse to Recycle, Reuse and Recycle",
+   "There is no such thing as \'away\'. When we throw anything away it must go somewhere",
+   "Whatever the problem, be part of the solution",
+   "We never know the worth of water til the well is dry",
+   "He that plants trees loves others besides himself",
+   "We are living on this planet as if we had another one to go to",
+   "Earth provides enough to satisfy every man\'s need, but not every man\'s greed",
+   "Recycling takes a little effort on your part but makes a big difference to the world",
+   "It\'s not yours, not mine. It\'s ours. So, protect the mother Earth who nourishs you",
+   "The Earth does not belong to us: we belong to the Earth",
+   "What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves and to one another",
+   ]
+   paragraph.innerText = quotes[Math.floor(Math.random()*10)];
+}
+document.addEventListener("DOMContentLoaded", displayword())
+//present box rewards
+function imageappear(){
+   var present = document.getElementById("present");
+   var divnod = document.createElement("div");
+   present.appendChild(divnod);
+   divnod.className = "divnod";
+   
+   var para = document.createElement("p");
+   present.appendChild(para);
+   para.className = "sometext";
+   document.querySelector(".sometext").innerText = "Reward Checkpoint System: "+totalScore;
+   
+   document.querySelector(".close").style.display="block";
+}
+   
+document.getElementById("close").addEventListener("click",close);
+function close(){
+   var gift = document.getElementById("present");
+   var textbox = document.querySelector(".divnod");
+   var text = document.querySelector(".sometext");
+   present.removeChild(textbox);
+   present.removeChild(text);
+   document.querySelector(".close").style.display="none";
+   document.querySelector(".divnod").style.borderstyle="none";
+}
+</script>
+</html>
