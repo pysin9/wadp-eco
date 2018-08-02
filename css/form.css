@@ -4,7 +4,7 @@
 	padding:0px;
 }
 body {
-	background-image: url("formbackground.jpg");
+	background-image: url("../img/formbackground.jpg");
 	background-color: #ccccc;
 }
 
@@ -21,7 +21,7 @@ fieldset {
 	padding-right:15%;
 	margin:20px;
 	background-color:#ccccc;
-	background-image: url("formbackground.jpg");
+	background-image: url("../img/formbackground.jpg");
 	border:none;
 }
 

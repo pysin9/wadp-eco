@@ -1,0 +1,125 @@
+<html> 
+<head> 
+<title> Submission </title> 
+<link rel="stylesheet" type="text/css" href="../css/projectCSS.css" /> 
+<link rel="stylesheet" type="text/css" href="../css/myCSS.css" />
+</head> 
+
+<script> 
+var pendingVideos = [] ; 
+var email = localStorage.saveEmail 
+console.log(email)
+
+function pendingReview() { 
+	var videoInput = window.localStorage.getItem("videoInfo");
+	videoInput = videoInput.slice(1, -1);
+	pendingVideos.push(videoInput);
+	console.log(pendingVideos);
+	for (i=0; i < pendingVideos.length; i++) {
+	document.getElementById('info').innerHTML =  "<ol>" + "<li>" + pendingVideos + '</li>' + '</ol>';
+	} 
+	mail() 
+} 
+
+function mail() {
+var email = window.localStorage.getItem("saveEmail");
+var mailto = document.createElement("p");
+email = email.slice(1,-1);
+var mailing = document.createTextNode(email); 
+mailto.appendChild(mailing);
+document.getElementById('email').appendChild(mailto);
+} 
+
+
+</script> 
+
+<body> 
+<header> 
+ <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="../index.html">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="homepage.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="chat.html" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="game.html" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="login.html" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+      </nav> 
+<div class="dropdown">
+<form method="get"> 
+<input type="search" placeholder='search' id='search'> 
+<input type='image' src="../img/search.png" onclick='search()' class='searchButton'>
+</button> 
+</form> 
+<select onchange='changeMenu(this.value)'> Other
+    <option  value="Choose" selected="selected"> Choose </option> 
+    <option value='videos'>Videos </option> 
+    <option value='submitVideos' >Submit A Video</option> 
+    <option value='help-section'>Help Section  </option> 
+  </div>
+  </select> 
+</header> 
+<button onclick='pendingReview()' id='showButton'>
+Show Pending Videos
+</button> 
+<div id='info'> 
+
+
+</div> 
+<form id='review'>
+<legend> Review </legend> 
+Will you list this video? 
+<input type='radio' value='yes' required> Yes
+<input type='radio' value='no' required> No 
+<div>
+If no, why? 
+<div> 
+<input type='textarea' id='long-answer' required> 
+<script src="../js/function.js"></script> 
+<button onclick='mail()'> Submit </button> 
+<div id='email'> 
+</div> 
+</fieldset> 
+</form> 
+<script> 
+
+function confirm() {
+document.getElementById('review').style.visibility = "visible"; 
+} 
+document.getElementById('showButton').addEventListener("click", confirm()) 
+
+</script> 
+</body> 
+</html> 

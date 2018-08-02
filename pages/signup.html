@@ -55,11 +55,17 @@
         var inputName = document.getElementById("name").value;
         var inputEmail = document.getElementById("email").value;
         var inputPassword = document.getElementById("password").value;
-        var obj={"name":inputName, "email":inputEmail,"password":inputPassword};
-        localStorage.setItem(inputName, JSON.stringify(obj));
-        e.preventDefault();
+		var obj={};
+		obj.name = inputName 
+		obj.email = inputEmail 
+		obj.password = inputPassword 
+        localStorage.saveUsername = inputName 
+		localStorage.savePassword = inputPassword 
+		localStorage.saveEmail = inputEmail 
+		var profileValues = JSON.stringify(obj) 
+        localStorage.profile = profileValues
+        console.log(localStorage.getItem("profile")) 
     }
-
     form.addEventListener('submit', saveToStorage);
     
 </script>

@@ -1,0 +1,133 @@
+<html> 
+<meta charset = utf-8> 
+<head> 
+<link rel="stylesheet" type="text/css" href="../css/projectCSS.css"> 
+<link rel="stylesheet" type="text/css" href="../css/myCSS.css" />
+<title> Login </title> 
+
+</head> 
+
+<body> 
+<script> 
+var Information = [] 
+localStorage.getItem("profile");
+var getUsername = window.localStorage.saveUsername;
+var getPassword = window.localStorage.savePassword;
+var getEmail = window.localStorage.saveEmail;
+Information.push (getUsername);
+Information.push (getPassword);
+Information.push (getEmail);
+console.log(getUsername);
+console.log(getPassword);
+console.log(getEmail);
+console.log(Information);
+
+
+function check() {
+	var inputLogin = JSON.stringify(document.getElementById('loginName').value) 
+	var inputPassword = document.getElementById('loginPass').value
+	
+		if ((inputLogin == getUsername) || (inputPassword == getPassword)) {
+			  alert('successful attempt') ;
+			  window.location.href = 'homepage.html';
+			  savePassword() 
+		}
+		else if ((inputLogin == getEmail) || (inputPassword == getPassword)) {
+			alert('sucessful login') ;
+			location.assign('profile .html') 
+		} 
+		else {;
+			alert('unsucessful attempt, please try again') 
+		} 
+	}
+
+function savePassword() {
+var input = document.querySelector("input[type='checkbox']").value 
+console.log(input)
+	if (input == 1) {
+		localStorage.savePassword = getPassword 
+		alert('saved your data successfully!') 
+	} 
+} 
+
+
+</script> 
+
+<header> 
+ <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="../index.html">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="homepage.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="chat.html" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="game.html" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="login.html" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+      </nav> 
+<div class="dropdown">
+<form method="get"> 
+<input type="search" placeholder='search' id='search'> 
+<input type='image' src="../img/search.png" onclick='search()' class='searchButton'>
+</button> 
+</form> 
+<select onchange='changeMenu(this.value)'> Other
+    <option  value="Choose" selected="selected"> Choose </option> 
+    <option value='videos'>Videos </option> 
+    <option value='submitVideos' >Submit A Video</option> 
+    <option value='help-section'>Help Section  </option> 
+  </div>
+  </select> 
+</header> 
+<form id='login'> 
+<legend> 
+Username/ Email <input type="text" placeholder='username' id='loginName' required>
+<div> 
+Password <input type="password" placeholder="password" required id='loginPass'> 
+<div> 
+<input type='checkbox' value= '1' id='savePassword'> Stay logged in? </input> <br
+<div> 
+<button type="button" onclick="check();"> Login </button> 
+</form> 
+<div>	
+<a href='signup.html'> Don't have an account ? </a> <br> 
+<a href='Animated Guide.html'> Don't know how to log in? </a> 
+</legend> 
+<script> 
+
+</script> 
+<script src="../js/function.js"></script> 
+
+
+</html> 

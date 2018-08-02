@@ -1,0 +1,177 @@
+<html> 
+<head>
+	<title> Help Section </title> 
+	<link rel="stylesheet" type="text/css" href="../css/projectCSS.css" /> 
+	<link rel="stylesheet" type="text/css" href="../css/myCSS.css" />
+</head> 
+
+<script>  
+function mascotSearch() {
+	var query = document.getElementById('mascot-help').value;
+	var input = JSON.stringify(query);
+	if (input == 'game') {
+	var newbox = document.createElement('p') 
+	var reply = document.createTextNode('Game is under the button game')
+		reply.classname = 'comments' 
+		newbox.appendChild(reply) 
+		back() 
+	}
+	else if (input== 'login') {
+	var newbox = document.createtTextNode('Do you have an account?') 
+	var reply= document.createElement('input[type="text"]') 
+		if (reply == 'yes') { 
+		location.assign('login.html') 
+		}
+		if (reply =='no') {
+		var url = 'signup.html' 
+		var signup = document.createTextNode('You can sign up here!') 
+		var signUppage = document.createElement('a') 
+		signup = signup + url 
+		signUppage.appendChild(signup) 
+		document.querySelector('#appear').appendChild(signUppage) 
+		signUppage.classname = 'comments' 
+		}
+	} 
+	else { 
+	var newbox = document.createElement('p')  
+	var end = document.createTextNode('Sorry, I do not know, please try again') 
+	newbox.appendChild(end) 
+	document.querySelector('#appear').appendChild(newbox) 
+	newbox.classname ='comments' 
+} 
+} 
+
+function FAQ (content) {
+	var contentDiv = document.getElementById(content.innerText.trim());
+	contentDiv.style.display='block';
+	console.log(content.innerText); 
+	//toggle between tabs// 
+} 
+
+var timer; 
+
+function help() {
+	var mascot = document.createElement("img"); 
+	mascot.src = 'girl.png';
+	var node = document.createTextNode("Hello");
+	var Element = document.createElement('p') 
+	Element.appendChild(node) 
+	document.getElementById('appear').appendChild(mascot);
+	mascot.id = 'mascot' 
+	Element.id = 'node'
+	document.getElementById('appear').appendChild(Element)  
+	node.classname = 'comments'  
+} 
+	
+</script>
+
+<body> 
+<header> 
+ <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="../index.html">Environmental Conservation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="homepage.html" class="nav-link">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="chat.html" class="nav-link">
+                      Chat
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="game.html" class="nav-link">
+                      Game
+                    </a>
+                  </li>
+				  <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="login.html" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      log in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+<div class='dropdown'> 
+ 
+	<select onchange='changeMenu(this.value)'> Other
+    <option  value="Choose" selected="selected"> Choose </option> 
+    <option value='videos'>Videos </option> 
+    <option value='submitVideos' >Submit A Video</option> 
+    <option value='help-section'>Help Section  </option> 
+  </div>
+  </select>
+      </nav> 
+
+<h3> Click the button shown below and our avatar will respond to any query you may have. </h3>
+<button type="button" id="helpButton" onclick ='help()' > Help 
+</button> 
+
+</form> 
+<div id='appear'> 
+<form>  
+<input type='text' id='mascot-help'>  
+<button src="../img/mascotSearch.png" class='searchButton' onclick='mascotSearch()'> 
+</form> 
+</div> 
+ 
+<p class='comments'> Here are some questions which are recurring, 
+<br class='comments'> if you don't find them here don't be afraid to seek help from me </p> 
+<span class ='FAQ'> 
+<div class='FAQ'> 
+<button class='tabs' onclick='FAQ (this)'> Points </button> 
+<button class='tabs' onclick='FAQ (this)'> Videos </button> 
+<button class='tabs' onclick='FAQ (this)'> Chat </button> 
+<button class='tabs' onclick='FAQ (this)'> Account </button> 
+</div> 
+</span> 
+
+<div id='Points' class='content'> 
+<p> Q1: How are these points redeemed? </p> 
+<p> These points can be redeemed in exchange for vouchers and gift cards, or our own eco bookmarks. </p> 
+<p> Q2: How do we earn points? </p> 
+<p> By playing our game, here is the <a href='game.html'> link </a> </p> 
+<p> I dn't see my points update ? </p> 
+<p> These things take a little while before it loads, so don't worry if you don't see it the first time. </p>
+</div>
+<div id = 'Videos' class='content'> 
+<p> Q1: Is there any requirements for the videos </p> 
+<p> Yes, make sure it is regarding the environment and on Youtube, we do not need it to be listed </p> 
+
+<p> Q2: I didn't receive any message for submission? </p> 
+<p> We are reviewing your submission, it will take no longer than 14 days </p> 
+</div>
+<div id='Chat' class='content'> 
+
+<p> Q1: Why can't I post? </p> 
+<p> We received a report that your behavious was suspicious, so we have temporarily banned you. </p>
+</div>
+
+<div id='Account' class='content'> 
+<p> How do I sign up for an account? </p> 
+<p> You can sign up using the homepage, and if you still can't find it, click the help Button </p> 
+
+<br> 
+<p> How do I see my account </p> 
+<p> You can view it if you use the dropdown menu, if you still can't find it, click the Help button. </p> 
+</div> 
+
+<script src='../js/function.js'> </script> 
+</body> 
+
+</html> 
