@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Form Processor</title>
+</head>
+<style>
+h1 {
+ text-align: center;
+ color: white;
+}
+h2 {
+ text-align: center;
+ color: white;
+ }
+p { text-align: center;
+color: white;
+}
+body {
+background-image: url("another.jpg");
+background-color: #ccccc;
+}
+ </style>
+<body>
+<script type="text/javascript">
+document.write("<h1>Your form has been submitted!</h1><h2>You entered the following data: Code for voucher. </h2>");
+var formData = location.search;
+
+formData = formData.substring(1, formData.length);
+while (formData.indexOf("+") != -1) {
+	formData = formData.replace("+", " ");
+}
+formData = unescape(formData);
+var formArray = formData.split("&");
+for (var i=0; i < formArray.length; ++i) {
+	document.writeln(formArray[i] + "<br />");
+}
+</script>
+<p> You will be sent an email about the total amount of points you have collected</p>
+</body>
+</html>
+
