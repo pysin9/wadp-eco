@@ -57,9 +57,9 @@
 <!--containers-->
 <div id="container">
    <div class="holder" id="mainheader">
-     <div class="box" draggable="true"><img id="paper" src="../img/ballpaper.jpg" ></div>
+     <div class="box" draggable="true"><img id="paper" src="../img/ballpaper.gif" ></div>
    </div>
-   <div id="boximage" class="holder"><img id="dustbin" src="../img/dustbin.jpg" >
+   <div id="boximage" class="holder"><img id="dustbin" src="../img/dustbin.gif" >
    </div>
 </div>
 <!--score system-->
@@ -135,18 +135,18 @@ document.addEventListener("DOMContentLoaded", App.init)
 function endgame(){
     alert("Congratualations! You have accumulated " + totalScore + " points");
 	document.getElementById("store").innerText="Score: 0";
-	document.getElementById("dustbin").src = "../img/dustbin.jpg";
+	document.getElementById("dustbin").src = "../img/dustbin.gif";
 	}
 //changepicture
 function changepic(){
     var x = document.querySelectorAll("#boximage img");
     var z = document.querySelectorAll("#boximage img").length;
        if (z==2){
-			document.getElementById("dustbin").src = "../img/trashpaper.jpg";
+			document.getElementById("dustbin").src = "../img/trashpaper.gif";
             
 			//create image 
 			var imagenode = document.createElement("IMG");
-			imagenode.setAttribute("src","../img/ballpaper.jpg");
+			imagenode.setAttribute("src","../img/ballpaper.gif");
 
 			var divNode = document.createElement("DIV");
 			divNode.setAttribute("class", "box");
@@ -168,7 +168,7 @@ function changepic(){
             document.getElementById("store").innerHTML="Score: "+totalScore;
 		}
         else{
-	      document.getElementById("dustbin").src = "../img/dustbin.jpg";
+	      document.getElementById("dustbin").src = "../img/dustbin.gif";
 	    }
 		
 }

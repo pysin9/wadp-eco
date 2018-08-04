@@ -4,7 +4,7 @@
 	padding:0px;
 }
 body {
-	background-image: url("../img/formbackground.jpg");
+	background-image: url("../img/formwallpaper6.jpg");
 	background-color: #ccccc;
 }
 
@@ -17,14 +17,15 @@ form {
 fieldset {
 	padding-top:5%;
 	padding-bottom:5%;
-	padding-left:15%;
+	padding-left:25%;
 	padding-right:15%;
 	margin:20px;
 	background-color:#ccccc;
-	background-image: url("../img/formbackground.jpg");
 	border:none;
 }
-
+p{
+	padding-left: 5%
+}
 legend {
 	background-color:blue;
 	color:white;
@@ -81,4 +82,180 @@ input:focus:invalid {
    background-position:right 40%; 
    background-size:1.5em 1.5em;
  }
-
+  div{
+      display: block;
+  }
+  a{
+    color: #9c27b0;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+  }
+  #navbar-full .navbar {
+    border-radius: 0;
+    margin-bottom: 20px;
+    z-index: 2;
+  }
+  #navbar {
+    margin-bottom: -20px;
+  }
+  #navbar .navbar {
+      border-radius: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  .navbar {
+    border: 0;
+    border-radius: 3px;
+    padding: 0.625rem 0;
+    margin-bottom: 20px;
+    color: #555;
+    background-color: #fff;
+    box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
+  }
+  .navbar>.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container {
+      min-width: 992px;
+    }
+  .navbar .navbar-brand {
+      padding: 22px 20px;
+      height: 80px;
+      float: left;
+      font-size: 24px;
+      transition: 3s;
+      color: #555;
+      
+  }
+  .navbar .navbar-nav{
+      list-style: none;
+      float: right;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+  }
+  .navbar .navbar-nav .nav-item{
+      list-style: none;
+  }
+  .navbar .navbar-nav .nav-item .nav-link{
+      line-height: 80px;
+      color: #555;
+      padding: 12px 30px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .3s;
+  }
+  .navbar .navbar-nav .nav-item .btn{
+      line-height: 80px;
+      color: #555;
+      padding: 12px 30px ;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .3s;
+      background: #E2472F;
+      color: #fff;
+      border-radius: 6px;
+      margin-right: 1.25rem;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus {
+    text-decoration: none;
+  }
+  
+  .nav-link.disabled {
+    color: #6c757d;
+  }
+  .navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+  }
+  
+  .navbar-brand:hover,
+  .navbar-brand:focus {
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+  
+  .navbar-toggler:hover,
+  .navbar-toggler:focus {
+    text-decoration: none; 
+  }
+  
+  .navbar-toggler:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+  
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+  }
+  .navbar-expand-lg {
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+  }
+  .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu-right {
+      right: 0;
+      left: auto;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+  }
+  .navbar-expand-lg>.container{
+      flex-wrap: nowrap;
+  }
+  .navbar-expand-lg .navbar-collapse {
+      display: flex;
+      flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-toggler {
+      display: none;
+  }
+  .navbar-expand-lg .dropup .dropdown-menu {
+      top: auto;
+      bottom: 100%;
+  }
