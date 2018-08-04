@@ -2,7 +2,6 @@
 .box {
   height: 100px;
   width: 50x;
-  background-color: white;
   position: relative;
   cursor: pointer;
   margin: left;
@@ -17,7 +16,6 @@
   width: 300px;
   margin: 10px;
   border: solid 5px green;
-  background-color: white;
   display: inline-block; 
 }
 
