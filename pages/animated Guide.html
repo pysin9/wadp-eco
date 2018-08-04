@@ -8,38 +8,61 @@
 <script>  
 function mascotSearch() {
 	var query = document.getElementById('mascot-help').value;
-	var input = JSON.stringify(query);
-	if (input == 'game') {
-	var newbox = document.createElement('p') 
-	var reply = document.createTextNode('Game is under the button game')
-		reply.classname = 'comments' 
-		newbox.appendChild(reply) 
-		back() 
+	if (query =='game') {
+	var newbox = document.createElement('p');
+	var reply = document.createTextNode('Game is under the button game');
+		newbox.classList.add('comments') 
+		newbox.appendChild(reply);
+		document.querySelector('#appear').appendChild(newbox);
 	}
-	else if (input== 'login') {
-	var newbox = document.createtTextNode('Do you have an account?') 
-	var reply= document.createElement('input[type="text"]') 
-		if (reply == 'yes') { 
-		location.assign('login.html') 
-		}
-		if (reply =='no') {
-		var url = 'signup.html' 
-		var signup = document.createTextNode('You can sign up here!') 
-		var signUppage = document.createElement('a') 
-		signup = signup + url 
-		signUppage.appendChild(signup) 
-		document.querySelector('#appear').appendChild(signUppage) 
-		signUppage.classname = 'comments' 
-		}
+	else if (query == 'videos') { 
+	var newbox = document.createElement('p');
+	var reply = document.createTextNode('Videos can be found in the dropdown box');
+		newbox.classList.add('comments') 
+		newbox.appendChild(reply);
+		document.querySelector('#appear').appendChild(newbox);
 	} 
+	else if (query=='login') {
+	var newpara = document.createElement('p');
+	newpara.classList.add('comments') 
+	var newbox = document.createTextNode('Do you have an account?'); 
+	newpara.appendChild(newbox);
+	var reply= document.createElement('input'); 
+	reply.setAttribute("type", "text");
+	var submit = document.createElement('button');
+	submit.innerHTML = 'Reply';
+	newpara.appendChild(reply);
+	newpara.appendChild(submit) 
+	submit.id= 'queryButton'
+	reply.classList.add('comments') 
+	document.querySelector('#appear').appendChild(newpara); 
+	document.getElementById('queryButton').addEventListener("click", function enter() {
+	var reply = document.querySelector('input.comments').value  
+			if (reply == 'yes') { 
+			var login = document.createTextNode('You can login under the login button') 
+			}
+			if (reply =='no') { 
+			var signUppage = document.createElement("a");
+			signUppage.setAttribute("href",'signup.html') 
+			var url =document.createTextNode('You can sign up here!') 
+			signUppage.appendChild(url) 
+			signUppage.classList.add("comments"); 
+			document.querySelector('#appear').appendChild(signUppage);
+			
+		}
+	}   
+	
+	)
+	}
 	else { 
-	var newbox = document.createElement('p')  
+	var newbox = document.createElement('p')   
 	var end = document.createTextNode('Sorry, I do not know, please try again') 
 	newbox.appendChild(end) 
 	document.querySelector('#appear').appendChild(newbox) 
-	newbox.classname ='comments' 
-} 
-} 
+	newbox.classList.add("comments");
+	
+	} 
+	} 
 
 function FAQ (content) {
 	var contentDiv = document.getElementById(content.innerText.trim());
