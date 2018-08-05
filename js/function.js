@@ -9,7 +9,7 @@ back()
 
 function changeMenu(value) {
 	if (value == 'videos') {
-		location.assign('Demo Videos.html') 
+		location.assign('demoVideos.html') 
 	} 
 	
 	else if (value == 'submitVideos') {
@@ -17,7 +17,7 @@ function changeMenu(value) {
 	} 
 	
 	else if (value == 'help-section') {
-		location.assign('Animated Guide.html') 
+		location.assign('animatedGuide.html') 
 	} 
 	else { 
 		alert('I do not know') 
